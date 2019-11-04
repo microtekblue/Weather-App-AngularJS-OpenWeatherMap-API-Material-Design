@@ -1,6 +1,22 @@
 # Weather App: AngularJS 1.7.8, OpenWeatherMap API, Angular Material Design
 This Weather App uses AngularJS 1.7.8 + OpenWeatherMap API + Material Design to show any city world wide current temperature and 5 day forecast temperature.
 
+### How to Run
+
+1. Clone Project
+2. Run 'npm install'
+3. Run 'npm start'
+
+### Screenshots
+
+![Brampton Celsius](https://www.webdesigndevelopment.ca/github/weather-app/images/brampton-C.JPG)
+
+![Brampton Fahrenheit](https://www.webdesigndevelopment.ca/github/weather-app/images/brampton-F.JPG)
+
+![Mississauga Celsius](https://www.webdesigndevelopment.ca/github/weather-app/images/forecast-mississauga-C.JPG)
+
+![Mississauga Fahrenheit](https://www.webdesigndevelopment.ca/github/weather-app/images/forecast-mississauga-F.JPG)
+
 # Setup used: `angular-seed` — the seed for AngularJS apps
 
 ### Install Dependencies
