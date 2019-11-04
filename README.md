@@ -7,6 +7,11 @@ This Weather App uses AngularJS 1.7.8 + OpenWeatherMap API + Material Design to 
 2. Run 'npm install'
 3. Run 'npm start'
 
+
+### Demo
+
+https://www.webdesigndevelopment.ca/github/weather-app/
+
 ### Screenshots
 
 ![Brampton Celsius](https://www.webdesigndevelopment.ca/github/weather-app/images/brampton-C.JPG)
@@ -56,48 +61,4 @@ npm start
 ```
 
 Now browse to the app at [`localhost:8000/index.html`][local-app-url].
-
-## Serving the Application Files
-
-While AngularJS is client-side-only technology and it is possible to create AngularJS web apps that
-do not require a backend server at all, we recommend serving the project files using a local
-web server during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, XHR,
-etc to function properly when an HTML page is opened via the `file://` scheme instead of `http://`.
-
-### Running the App during Development
-
-The `angular-seed` project comes preconfigured with a local development web server. It is a Node.js
-tool called [http-server][http-server]. You can start this web server with `npm start`, but you may
-choose to install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from any folder by running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own web server, such as Apache or Nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-### Running the App in Production
-
-THIS APP IS NOT SUITABLE TO BE RUN IN A PRODUCTION ENVIRONMENT.
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are the files under the `app/` directory.
-Everything else should be omitted.
-
-AngularJS apps are really just a bunch of static HTML, CSS and JavaScript files that need to be
-hosted somewhere they can be accessed by browsers.
-
-If your AngularJS app is talking to the backend server via XHR or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and web server(s).
-
 
