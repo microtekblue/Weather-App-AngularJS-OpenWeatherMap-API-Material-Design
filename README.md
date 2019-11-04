@@ -1,10 +1,7 @@
-# Weather-App-AngularJS-OpenWeatherMap-API-Material-Design
+# Weather App: AngularJS 1.7.8, OpenWeatherMap API, Angular Material Design
 This Weather App uses AngularJS 1.7.8 + OpenWeatherMap API + Material Design to show any city world wide current temperature and 5 day forecast temperature.
 
-
 # Setup used: `angular-seed` — the seed for AngularJS apps
-
-
 
 ### Install Dependencies
 
@@ -43,9 +40,6 @@ npm start
 ```
 
 Now browse to the app at [`localhost:8000/index.html`][local-app-url].
-
-
-
 
 ## Serving the Application Files
 
