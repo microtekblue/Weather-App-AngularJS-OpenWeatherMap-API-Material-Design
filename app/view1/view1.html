@@ -1,0 +1,84 @@
+<div layout="row" layout-xs="column" style="align-items: center; justify-content: center;padding:1rem;" ng-cloak>
+    <div flex-lg="50" flex-md="30" flex-sm="100">
+
+        <h1 class="md-headline text-center">Get Today's Weather</h1>
+
+        <h2 class="md-subhead text-center">Example Search: London, UK</h2>
+
+        <br>
+        <form name="citysearch" ng-submit="vm.submit()">
+            <div class="text-center">
+                <md-input-container flex="66">
+                    <label class="text-left">Enter a city</label>
+                    <input type="text" ng-model="vm.cityName" required>
+
+                </md-input-container>
+                <md-button flex="33"
+                           class="md-primary md-raised"
+                           style="display: inline"
+                           type="submit"
+                           ng-disabled="vm.formDisabled">Search
+                </md-button>
+            </div>
+        </form>
+
+
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-hide="!vm.isLoading" class="text-center">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+
+        <div ng-hide="vm.error" ng-cloak>
+
+            <h2 ng-hide="!vm.completed || vm.isLoading" style="color:#ff0000" class="md-headline text-center">Today's
+                Weather in {{vm.weatherData.name}}, {{vm.weatherData.sys.country}}</h2>
+
+            <form ng-hide="!vm.completed || vm.isLoading">
+                <md-radio-group layout="row" ng-model="vm.tempSetting" ng-change="vm.changeTemp()" style="width:150px;margin:0 auto;">
+                    <md-radio-button ng-value="vm.fahrenheit" aria-label="FAHRENHEIT">
+                        &#8457;
+                    </md-radio-button>
+
+                    <md-radio-button ng-value="vm.celsius" aria-label="CELSIUS">
+                        &#8451;
+                    </md-radio-button>
+                </md-radio-group>
+            </form>
+
+            <md-list ng-hide="vm.isLoading" style="width:250px;margin:0 auto;">
+                <md-list-item class="md-2-line" ng-repeat="item in vm.weatherData.weather">
+                    <img alt="{{item.icon}}" ng-src="//openweathermap.org/img/wn/{{item.icon}}@2x.png"/>
+                    <div class="md-list-item-text">
+                        <h3><strong>{{item.main}}</strong></h3>
+                        <p style="text-transform: capitalize">{{item.description}}</p>
+                    </div>
+
+                </md-list-item>
+
+                <div ng-hide="!vm.completed">
+                    <ul style="list-style: none">
+                        <li><strong>Temp:</strong> {{vm.weatherData.main.temp}}</li>
+                        <li><strong>Pressure:</strong> {{vm.weatherData.main.pressure}}</li>
+                        <li><strong>Humidity:</strong> {{vm.weatherData.main.humidity}}</li>
+                        <li><strong>Min Temp:</strong> {{vm.weatherData.main.temp_min}}</li>
+                        <li><strong>Max Temp:</strong> {{vm.weatherData.main.temp_max}}</li>
+                    </ul>
+
+                </div>
+
+
+            </md-list>
+
+        </div>
+
+        <div ng-hide="!vm.error || vm.isLoading">
+            <p class="text-center">There was a problem with the request.</p>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
